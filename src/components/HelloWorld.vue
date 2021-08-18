@@ -1,16 +1,19 @@
 <template>
   <div class="hello">
-    <h1>{{title}} {{isAdmin}} </h1>
+    <h1>{{title}} {{isAdmin?'(Admin)':'(Visitor)'}} </h1>
    <p>Followers:{{count}} </p>
    <button class="btn btn-primary m-2" @click="count++" >Increase</button>
    <button class="btn btn-primary m-2" @click="Decrease()" >Decrease</button>
-   <button class="btn btn-primary m-2" @click="count==0" >Reset</button>
+   <button class="btn btn-primary m-2" @click="count=0" >Reset</button>
+   
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
+
   props: {
     title: String,
   },
